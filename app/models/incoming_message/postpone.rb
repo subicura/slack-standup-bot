@@ -13,9 +13,9 @@ class IncomingMessage
 
     def validate!
       if !@standup.active?
-        raise InvalidCommandError.new("You can only skip the standup when asked.")
+        raise InvalidCommandError.new("물어봤을때만 skip할 수 있어요.")
       elsif channel.today_standups.pending.empty?
-        raise InvalidCommandError.new("You can not skip your standup because you are the last one in the stack.")
+        raise InvalidCommandError.new("마지막 사람은 skip할 수 없어요. 작성할게 없으면 -n/a를 입력하세요.")
       end
 
       super

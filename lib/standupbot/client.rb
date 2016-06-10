@@ -19,11 +19,6 @@ module Standupbot
       @channel_sync.errors
     end
 
-    def self.start(channel_id)
-      client = self.new(channel_id)
-      client.start!
-    end
-
     # Initiaties a new realtime slack client to do the standup.
     #
     def start!

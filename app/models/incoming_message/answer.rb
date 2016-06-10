@@ -15,7 +15,7 @@ class IncomingMessage
         @standup.process_answer(@message['text'])
 
         if @standup.completed?
-          channel.message('Good Luck Today!')
+          channel.message('좋은 하루 되세요!')
         else
           channel.message(@standup.current_question)
         end

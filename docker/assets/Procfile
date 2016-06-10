@@ -1,3 +1,2 @@
-rails: bundle exec unicorn_rails -c config/unicorn-docker.rb -E $RAILS_ENV
-jobs: /app/bin/delayed_job start
+rails: /app/bin/delayed_job start && bundle exec unicorn_rails -c config/unicorn-docker.rb -E $RAILS_ENV
 nginx: /usr/local/nginx/sbin/nginx
