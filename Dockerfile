@@ -46,7 +46,7 @@ RUN cd /tmp && \
 
 # install rails dependency packages
 RUN \
-  apt-get -qq -y install libsqlite3-dev libmysqlclient-dev imagemagick libmagickcore-dev libmagickwand-dev \
+  apt-get -qq -y install libsqlite3-dev libmysqlclient-dev imagemagick libmagickcore-dev libmagickwand-dev nodejs \
     autotools-dev automake
 
 # nginx setting
