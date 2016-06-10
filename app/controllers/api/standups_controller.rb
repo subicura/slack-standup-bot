@@ -12,7 +12,7 @@ class Api::StandupsController < Api::BaseController
     @client = Standupbot::Client.new(params[:channel_id])
 
     if @client.valid?
-      @client.start!
+      Standupbot::Client.delay.start(params[:channel_id])
     else
       @errors = @client.errors
     end

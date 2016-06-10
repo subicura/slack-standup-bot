@@ -112,21 +112,21 @@ class Standup < ActiveRecord::Base
 
   def question_for_number(number)
     case number
-    when 1 then Time.now.wday == 4 ? "1. What did you do on Friday?" : "1. What did you do yesterday?"
-    when 2 then "2. What are you working on today?"
-    when 3 then "3. Is there anything standing in your way?"
+    when 1 then Time.now.wday == 4 ? "1. 금요일날 무슨일을 하셨나요?" : "1. 어제 무슨일을 하셨나요?"
+    when 2 then "2. 오늘할일은 무엇인가요?"
+    when 3 then "3. 오늘 특별한 이슈가 있나요?"
     end
   end
 
   def current_question
     if self.yesterday.nil?
-      Time.now.wday == 1 ? "<@#{self.user.slack_id}> 1. What did you do on Friday?" : "<@#{self.user.slack_id}> 1. What did you do yesterday?"
+      Time.now.wday == 1 ? "<@#{self.user.slack_id}> 1. 금요일날 무슨일을 하셨나요?" : "<@#{self.user.slack_id}> 1. 어제 무슨일을 하셨나요?"
 
     elsif self.today.nil?
-      "<@#{self.user.slack_id}> 2. What are you working on today?"
+      "<@#{self.user.slack_id}> 2. 오늘할일은 무엇인가요?"
 
     elsif self.conflicts.nil?
-      "<@#{self.user.slack_id}> 3. Is there anything standing in your way?"
+      "<@#{self.user.slack_id}> 3. 오늘 특별한 이슈가 있나요?"
     end
   end
 
