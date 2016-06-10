@@ -26,7 +26,7 @@ RUN \
 RUN \
   add-apt-repository -y ppa:brightbox/ruby-ng && \
   apt-get -qq update && \
-  apt-get -qq -y install ruby2.3 ruby2.3-dev && \
+  apt-get -qq -y install ruby2.0 ruby2.0-dev && \
   gem sources -r https://rubygems.org/ && \
   gem install bundler --no-ri --no-rdoc --source http://rubygems.org
 
