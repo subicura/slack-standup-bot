@@ -11,6 +11,8 @@ services:
       DB_PASSWORD: password
       DB_DATABASE: standup
       SECRET_KEY_BASE: secret
+      STANDUPBOT_USERNAME: admin
+      STANDUPBOT_SECRET: password
     ports:
       - 8888:80
     volumes:
