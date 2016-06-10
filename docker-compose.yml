@@ -1,0 +1,28 @@
+# for development
+version: '2'
+services:
+  app:
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USERNAME: standup
+      DB_PASSWORD: password
+      DB_DATABASE: standup
+    ports:
+      - 8888:80
+    volumes:
+      - /data/standup/system:/app/public/system
+    build: 
+      context: .
+      dockerfile: Dockerfile
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - /data/standup/mysql/data:/var/lib/mysql
+      - /data/standup/mysql/conf.d:/etc/mysql/conf.d
+      - /data/standup/mysql/root:/root
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
