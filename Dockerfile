@@ -94,7 +94,7 @@ ADD lib /app/lib
 ADD public /app/public
 ADD docker/assets/Procfile /app/Procfile
 
-RUN rake assets:precompile
+RUN bundle exec rake assets:precompile
 
 # mount port/volumn
 EXPOSE 80
