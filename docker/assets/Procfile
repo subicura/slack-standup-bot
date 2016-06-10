@@ -1,0 +1,2 @@
+rails: bundle exec unicorn_rails -c config/unicorn-docker.rb -E $RAILS_ENV
+nginx: /usr/local/nginx/sbin/nginx
