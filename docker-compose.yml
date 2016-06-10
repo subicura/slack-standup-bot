@@ -5,6 +5,7 @@ services:
     depends_on:
       - mysql
     environment:
+      RAILS_ENV: production
       DB_HOST: mysql
       DB_USERNAME: standup
       DB_PASSWORD: password
